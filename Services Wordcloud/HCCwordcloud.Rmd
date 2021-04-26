@@ -1,0 +1,26 @@
+---
+title: "HCCPC WordCloud"
+author: "Gisela Gonzalez"
+date: "4/22/2021"
+output: html_document
+
+#CODE OBJECTIVE : Create a wordcloud for survey data of what library resources students utilize 
+
+#----LOAD PACKAGES--------------------
+```{r}
+install.packages("wordcloud") 
+library(wordcloud)
+```
+
+#----LOAD LIBRARY SERVICES DATA------------
+```{r}
+HCC.Services. <- read.csv("~/Desktop/HCC Services .csv")
+View(HCC.Services.)
+```
+
+#-----CREATING A WORDCLOUD------------------
+```{r}
+wordcloud(words = HCC.Services.$Services, freq = HCC.Services.$Count, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
+```
+
+
